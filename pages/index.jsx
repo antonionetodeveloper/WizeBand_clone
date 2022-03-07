@@ -5,8 +5,9 @@ import { Main } from "../styles/Home"
 import { GlobalHeader as Header } from "../styles/Components/Global/GlobalHeader"
 import { GlobalFooter as Footer } from "../styles/Components/Global/GlobalFooter"
 import { Carousel } from "../styles/Components/Carousel"
-import { Categories } from "../styles/Components/Categories/Categories"
-import { Catalog } from "../styles/Components/Catalog/Catalog"
+import { Categories } from "../styles/Components/Home/Categories/Categories"
+import { Catalog } from "../styles/Components/Home/Catalog/Catalog"
+import { Reviews } from "../styles/Components/Home/Reviews/Reviews"
 
 export default function Home() {
 	return (
@@ -28,6 +29,8 @@ export default function Home() {
 
 				<h2>Todos os itens</h2>
 				<Catalog />
+
+				<Reviews />
 			</Main>
 
 			<Footer />

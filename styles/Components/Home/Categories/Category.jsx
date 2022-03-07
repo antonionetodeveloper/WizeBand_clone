@@ -16,6 +16,7 @@ const Container = styled.div`
 		width: 20vw;
 		flex: none;
 		overflow: hidden;
+		border-radius: 1vw;
 
 		a {
 			width: 30vw;
@@ -29,7 +30,7 @@ const Container = styled.div`
 				transform: scale(1.1);
 				cursor: pointer;
 			}
-
+			
 			img {
 				width: 20vw;
 				border-radius: 1vw;

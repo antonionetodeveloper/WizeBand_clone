@@ -1,9 +1,19 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/prop-types */
-import { useRef } from "react"
+import { useEffect, useState, useRef } from "react"
 import Image from "next/image"
 import styled from "styled-components"
 
 export const Carousel = (props) => {
+	const [seconds, setSeconds] = useState(0)
+	const [slide, setSlide] = useState(1)
+
+	useEffect(() => {
+		setInterval(() => {
+			setSeconds(event => event + 1)
+    }, 1000)
+	}, [])
+
 	const carousel = useRef(null)
 
 	const handleLeftClick = (e) => {
@@ -13,7 +23,6 @@ export const Carousel = (props) => {
 
 	const handleRightClick = (e) => {
 		e.preventDefault()
-
 		carousel.current.scrollLeft += carousel.current.offsetWidth
 	}
 
