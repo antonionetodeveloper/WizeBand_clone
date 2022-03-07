@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components"
 
-import { FontCollor } from "./_Colors"
+import { FontCollor } from "../_Colors"
 
 export default function HeadHook({ name }) {
 	return (

@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useRef } from "react"
 import Image from "next/image"
 import styled from "styled-components"
 
-export default function Carousel() {
+export const Carousel = (props) => {
 	const carousel = useRef(null)
 
 	const handleLeftClick = (e) => {
@@ -21,18 +22,18 @@ export default function Carousel() {
 			<button onClick={handleLeftClick}>
 				<img
 					className="back"
-					src="https://img.icons8.com/material-rounded/96/604648/circled-chevron-right.png"
+					src="https://img.icons8.com/material-rounded/96/E4D8D0/circled-chevron-right.png"
 				/>
 			</button>
 			<button onClick={handleRightClick}>
 				<img
 					className="next"
-					src="https://img.icons8.com/material-rounded/96/604648/circled-chevron-right.png"
+					src="https://img.icons8.com/material-rounded/96/E4D8D0/circled-chevron-right.png"
 				/>
 			</button>
 			<div ref={carousel}>
 				<Image
-					src={"/home/carousel/ex.png"}
+					src={props.src1}
 					alt="Carousel"
 					height={600}
 					width={1500}
@@ -40,14 +41,14 @@ export default function Carousel() {
 					priority
 				/>
 				<Image
-					src={"/home/carousel/ex.png"}
+					src={props.src2}
 					alt="Carousel"
 					height={700}
 					width={1500}
 					quality={100}
 				/>
 				<Image
-					src={"/home/carousel/ex.png"}
+					src={props.src3}
 					alt="Carousel"
 					height={700}
 					width={1500}

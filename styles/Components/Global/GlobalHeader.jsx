@@ -4,6 +4,7 @@ import styled from "styled-components"
 export const GlobalHeader = () => {
 	return (
 		<Container>
+			<h1>WizeBand</h1>
 			<div>
 				<section>
 					<img
@@ -57,6 +58,10 @@ const Container = styled.header`
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+
+		h1 {
+			display: none;
+		}
 
 		div {
 			display: flex;

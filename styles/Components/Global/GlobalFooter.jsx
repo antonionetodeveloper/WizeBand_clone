@@ -81,6 +81,7 @@ const Container = styled.footer`
 
 			p,
 			h3 {
+				margin-block-start: 0px;
 				margin-top: 1.5vw;
 			}
 
@@ -95,7 +96,7 @@ const Container = styled.footer`
 			}
 			div.subscribe {
 				p {
-					margin-top: 2vw;
+					margin-top: 1.5vw;
 					font-size: 1.2vw;
 					font-weight: 600;
 					text-align: center;
