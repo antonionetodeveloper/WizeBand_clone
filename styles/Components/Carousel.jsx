@@ -1,28 +1,40 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react/prop-types */
-import { useEffect, useState, useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import Image from "next/image"
 import styled from "styled-components"
 
 export const Carousel = (props) => {
-	const [seconds, setSeconds] = useState(0)
 	const [slide, setSlide] = useState(1)
 
 	useEffect(() => {
-		setInterval(() => {
-			setSeconds(event => event + 1)
-    }, 1000)
+		const interval = setInterval(() => {
+			setSlide((slide) => slide + 1)
+			if(slide < 4){
+				console.log(slide);
+			}if(slide >= 4	){
+				handloBackStart()
+				setSlide(0)
+			}
+
+    }, 2000)
+		return () => {
+      clearInterval(interval);
+    };
 	}, [])
+
 
 	const carousel = useRef(null)
 
-	const handleLeftClick = (e) => {
-		e.preventDefault()
+	const handloBackStart = () => {
 		carousel.current.scrollLeft -= carousel.current.offsetWidth
 	}
 
-	const handleRightClick = (e) => {
-		e.preventDefault()
+	const handleLeftClick = () => {
+		carousel.current.scrollLeft -= carousel.current.offsetWidth
+	}
+
+	const handleRightClick = () => {
 		carousel.current.scrollLeft += carousel.current.offsetWidth
 	}
 
