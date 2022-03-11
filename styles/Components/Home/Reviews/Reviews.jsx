@@ -1,22 +1,9 @@
-import { useEffect, useRef } from "react"
 import styled from "styled-components"
 import { Item } from "./Item"
 
 export const Reviews = () => {
-	const carousel = useRef(null)
-
-	useEffect(() => {
-		setInterval(() => {
-			handleRightClick()
-		}, 50)
-	}, [])
-
-	const handleRightClick = () => {
-		carousel.current.scrollLeft += 1
-	}
-
 	return (
-		<Container ref={carousel}>
+		<Container>
 			<Item
 				srcImage={"/home/reviews/review.jpg"}
 				nameInitials={"AF"}
@@ -85,12 +72,9 @@ export const Reviews = () => {
 }
 
 const Container = styled.section`
-	& {
-		margin-top: 10vw;
-		display: flex;
-		justify-content: space-evenly;
-		gap: 10vw;
-		overflow-x: hidden;
-		scroll-behavior: smooth;
-	}
+	display: flex;
+	justify-content: space-evenly;
+	gap: 10vw;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
 `

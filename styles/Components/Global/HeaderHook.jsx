@@ -3,10 +3,12 @@ import styled from "styled-components"
 
 import { FontCollor } from "../_Colors"
 
-export default function HeadHook({ name }) {
+export default function HeadHook({ name, to }) {
 	return (
 		<Container>
-			<span className="hover-underline-animation">{name}</span>
+			<a href={to}>
+				<span className="hover-underline-animation">{name}</span>
+			</a>
 		</Container>
 	)
 }
@@ -17,13 +19,17 @@ const Container = styled.button`
 		border: none;
 		background: none;
 
-		span {
-			color: ${FontCollor};
-			padding-bottom: 7px;
-			font-size: 10pt;
-			font-weight: 600;
-			padding: 1vw;
-			text-transform: uppercase;
+		a {
+			text-decoration: none;
+
+			span {
+				color: ${FontCollor};
+				padding-bottom: 7px;
+				font-size: 10pt;
+				font-weight: 600;
+				padding: 1vw;
+				text-transform: uppercase;
+			}
 		}
 
 		:hover {

@@ -1,42 +1,42 @@
-/* eslint-disable prettier/prettier */
 /* eslint-disable react/prop-types */
-import { useRef, useEffect, useState } from "react"
+import React, { useRef, useEffect, useState } from "react"
 import Image from "next/image"
 import styled from "styled-components"
 
 export const Carousel = (props) => {
+	const carousel = useRef(null)
 	const [slide, setSlide] = useState(1)
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setSlide((slide) => slide + 1)
-			if(slide < 4){
-				console.log(slide);
-			}if(slide >= 4	){
-				handloBackStart()
-				setSlide(0)
-			}
-
-    }, 2000)
-		return () => {
-      clearInterval(interval);
-    };
-	}, [])
-
-
-	const carousel = useRef(null)
-
 	const handloBackStart = () => {
-		carousel.current.scrollLeft -= carousel.current.offsetWidth
+		carousel.current.scrollLeft -= carousel.current.offsetWidth * 2
 	}
-
 	const handleLeftClick = () => {
 		carousel.current.scrollLeft -= carousel.current.offsetWidth
 	}
-
 	const handleRightClick = () => {
 		carousel.current.scrollLeft += carousel.current.offsetWidth
 	}
+
+	useEffect(() => {
+		if (slide <= 3) {
+			handleRightClick()
+		}
+
+		const interval = setInterval(() => {
+			setSlide((event) => event + 1)
+		}, 5000)
+
+		if (slide > 3) {
+			setSlide(1)
+			handloBackStart()
+		}
+
+		return () => {
+			if (interval) {
+				clearInterval(interval)
+			}
+		}
+	}, [slide])
 
 	return (
 		<Container>
@@ -57,7 +57,7 @@ export const Carousel = (props) => {
 					src={props.src1}
 					alt="Carousel"
 					height={600}
-					width={1500}
+					width={2500}
 					quality={100}
 					priority
 				/>
@@ -65,14 +65,14 @@ export const Carousel = (props) => {
 					src={props.src2}
 					alt="Carousel"
 					height={700}
-					width={1500}
+					width={2500}
 					quality={100}
 				/>
 				<Image
 					src={props.src3}
 					alt="Carousel"
 					height={700}
-					width={1500}
+					width={2500}
 					quality={100}
 				/>
 			</div>
@@ -82,58 +82,122 @@ export const Carousel = (props) => {
 
 const Container = styled.section`
 	& {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 98.964vw;
+		@media only screen and (max-width: 750px) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
-		button {
-			border: 0px;
-			position: absolute;
-			background-color: transparent;
+			width: 100vw;
 
-			z-index: 1;
+			button {
+				display: none;
+				border: 0px;
+				position: absolute;
+				background-color: transparent;
 
-			img {
-				width: 6vw;
-				filter: drop-shadow(1px 2px 5px #585858);
-				transition: 0.5s;
+				z-index: 1;
+
+				img {
+					width: 6vw;
+					filter: drop-shadow(1px 2px 5px #585858);
+					transition: 0.5s;
+
+					:hover {
+						filter: drop-shadow(4px 4px 10px #585858);
+					}
+				}
+
+				.back {
+					transform: rotate(180deg);
+
+					position: relative;
+					left: -40vw;
+				}
+
+				.next {
+					position: relative;
+					right: -40vw;
+				}
 
 				:hover {
-					filter: drop-shadow(4px 4px 10px #585858);
+					cursor: pointer;
 				}
 			}
 
-			.back {
-				transform: rotate(180deg);
+			div {
+				display: flex;
+				height: 80vh;
 
-				position: relative;
-				left: -40vw;
-			}
+				background: rgba(0, 0, 0, 0.2);
+				backdrop-filter: blur(15 px);
 
-			.next {
-				position: relative;
-				right: -40vw;
-			}
+				overflow-x: hidden;
 
-			:hover {
-				cursor: pointer;
+				scroll-behavior: smooth;
+
+				img,
+				span {
+					flex: none;
+				}
 			}
 		}
 
-		div {
-			height: 80vh;
+		@media only screen and (min-width: 751px) {
 			display: flex;
-			background: rgba(0, 0, 0, 0.2);
-			backdrop-filter: blur(15 px);
+			justify-content: center;
+			align-items: center;
 
-			overflow-x: hidden;
-			scroll-behavior: smooth;
+			width: 100vw;
 
-			img,
-			span {
-				width: 100%;
-				flex: none;
+			button {
+				border: 0px;
+				position: absolute;
+				background-color: transparent;
+
+				z-index: 1;
+
+				img {
+					width: 6vw;
+					filter: drop-shadow(1px 2px 5px #585858);
+					transition: 0.5s;
+
+					:hover {
+						filter: drop-shadow(4px 4px 10px #585858);
+					}
+				}
+
+				.back {
+					transform: rotate(180deg);
+
+					position: relative;
+					left: -40vw;
+				}
+
+				.next {
+					position: relative;
+					right: -40vw;
+				}
+
+				:hover {
+					cursor: pointer;
+				}
+			}
+
+			div {
+				display: flex;
+				height: 80vh;
+
+				background: rgba(0, 0, 0, 0.2);
+				backdrop-filter: blur(15 px);
+
+				overflow-x: hidden;
+
+				scroll-behavior: smooth;
+
+				img,
+				span {
+					flex: none;
+				}
 			}
 		}
 	}

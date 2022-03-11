@@ -23,7 +23,7 @@ export default class MyDocument extends Document {
 		return (
 			<html>
 				<Head>{this.props.styleTags}</Head>
-				<body>
+				<body style={{ overflow: "hidden" }}>
 					<Main />
 					<NextScript />
 				</body>

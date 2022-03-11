@@ -17,12 +17,29 @@ export const Categories = () => {
 
 const Container = styled.section`
 	& {
-		margin: 5vw 0vw 5vw 0vw;
+		@media only screen and (min-width: 751px) {
+			margin: 5vw 0vw 5vw 0vw;
 
-		div {
-			display: flex;
-			justify-content: center;
-			margin: 2vw;
+			div {
+				display: flex;
+				justify-content: center;
+				margin: 2vw;
+			}
+		}
+
+		@media only screen and (max-width: 750px) {
+			margin: 5vw 0vw 5vw 0vw;
+
+			h2 {
+				font-size: 8vw;
+			}
+
+			div {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				margin: 2vw;
+			}
 		}
 	}
 `

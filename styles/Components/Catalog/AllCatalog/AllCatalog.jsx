@@ -1,7 +1,8 @@
+import React from "react"
 import styled from "styled-components"
 import { Item } from "./Item"
 
-export const Catalog = () => {
+export const AllCatalog = () => {
 	const productList = [
 		{
 			imgUrl: "/home/catalog/clock1.png",
@@ -47,9 +48,13 @@ export const Catalog = () => {
 	)
 }
 
-const Container = styled.section`
-	display: flex;
-	gap: 4vw;
-	flex-wrap: wrap;
-	justify-content: center;
+export const Container = styled.div`
+	& {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 5vw;
+		margin: 2vw;
+	}
 `
