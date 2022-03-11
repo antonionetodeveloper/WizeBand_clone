@@ -9,7 +9,7 @@ export const Main = styled.main`
 			gap: 5vw;
 
 			color: #493436;
-			margin-top: 15vh;
+			margin-top: 20vh;
 			margin-bottom: 5vw;
 
 			h2 {
