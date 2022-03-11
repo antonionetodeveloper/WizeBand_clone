@@ -56,7 +56,7 @@ export const Carousel = (props) => {
 				<Image
 					src={props.src1}
 					alt="Carousel"
-					height={600}
+					height={700}
 					width={2500}
 					quality={100}
 					priority
@@ -126,7 +126,7 @@ const Container = styled.section`
 
 			div {
 				display: flex;
-				height: 80vh;
+				height: 50vh;
 
 				background: rgba(0, 0, 0, 0.2);
 				backdrop-filter: blur(15 px);

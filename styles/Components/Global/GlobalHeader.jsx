@@ -164,6 +164,8 @@ const Container = styled.header`
 
 	@media only screen and (max-width: 750px) {
 		& {
+			box-shadow: 0px 2px 1vw rgba(0, 0, 0, 0.3);
+
 			width: 100%;
 			height: 15vh;
 			position: fixed;
