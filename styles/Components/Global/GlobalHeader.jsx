@@ -61,8 +61,8 @@ export const GlobalHeader = () => {
 						<a href="/contato">Contate-nos</a>
 					</div>
 					<div>
-						<a href="#">Login</a>
-						<a href="#">Register</a>
+						<a href="/login/login">Login</a>
+						<a href="/login/registro">Register</a>
 						<a href="#">Search</a>
 					</div>
 				</nav>
