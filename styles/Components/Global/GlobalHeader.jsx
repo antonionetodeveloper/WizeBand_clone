@@ -52,13 +52,13 @@ export const GlobalHeader = () => {
 					<div>
 						<a href="/">Home</a>
 						<a href="/catalogo">Catálogo</a>
-						<a href="#">Faixas de Couro</a>
-						<a href="#">Faixas de Náilon</a>
-						<a href="#">Faixas de Silicone</a>
-						<a href="#">Faixas de Metal</a>
-						<a href="#">Acessórios</a>
-						<a href="#">Acompanhar Pedido</a>
-						<a href="#">Contate-nos</a>
+						<a href="/couro">Faixas de Couro</a>
+						<a href="/nylon">Faixas de Náilon</a>
+						<a href="/silicone">Faixas de Silicone</a>
+						<a href="/metal">Faixas de Metal</a>
+						<a href="/acessorios">Acessórios</a>
+						<a href="/pedido">Acompanhar Pedido</a>
+						<a href="/contato">Contate-nos</a>
 					</div>
 					<div>
 						<a href="#">Login</a>
@@ -70,13 +70,13 @@ export const GlobalHeader = () => {
 			<nav>
 				<HeaderHook name={"Home"} to={"/"} />
 				<HeaderHook name={"Catálogo"} to={"/catalogo"} />
-				<HeaderHook name={"Faixas de Couro"} />
-				<HeaderHook name={"Faixas de Náilon"} />
-				<HeaderHook name={"Faixas de Silicone"} />
-				<HeaderHook name={"Faixas de Metal"} />
-				<HeaderHook name={"Acessórios"} />
-				<HeaderHook name={"Acompanhar pedido"} />
-				<HeaderHook name={"Contate-nos"} />
+				<HeaderHook name={"Faixas de Couro"} to={"/couro"} />
+				<HeaderHook name={"Faixas de Náilon"} to={"/nylon"} />
+				<HeaderHook name={"Faixas de Silicone"} to={"/silicone"} />
+				<HeaderHook name={"Faixas de Metal"} to={"/metal"} />
+				<HeaderHook name={"Acessórios"} to={"/acessorios"} />
+				<HeaderHook name={"Acompanhar pedido"} to={"/pedido"} />
+				<HeaderHook name={"Contate-nos"} to={"/contato"} />
 			</nav>
 		</Container>
 	)
@@ -238,6 +238,7 @@ const Container = styled.header`
 
 			.mobileNav {
 				display: ${(props) => (props.isVisible ? "flex" : "none")};
+				gap: 10vw;
 				flex-direction: column;
 				z-index: 3;
 				background-color: white;
@@ -252,6 +253,9 @@ const Container = styled.header`
 					margin-left: auto;
 					margin-right: 5vw;
 					width: 15vw;
+
+					position: relative;
+					top: 5vw;
 				}
 
 				div {
@@ -259,7 +263,7 @@ const Container = styled.header`
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
-					gap: 2vw;
+					gap: 1vw;
 					a {
 						text-decoration: none;
 						font-size: 6vw;

@@ -20,7 +20,7 @@ export default function Catalog() {
 				<Header />
 
 				<section className="first">
-					<span>TODAS AS BANDAS ({bands_length})</span>
+					<span>BANDAS DE NYLON ({bands_length})</span>
 					<AllCatalog />
 				</section>
 

@@ -79,7 +79,7 @@ const Container = styled.div`
 			justify-content: center;
 			align-items: center;
 
-			animation: moveSlideshow 120s linear infinite;
+			animation: moveSlideshow 60s linear infinite;
 			@keyframes moveSlideshow {
 				0% {
 					transform: translate3d(calc(+100% - 100vw), 0, 0);
