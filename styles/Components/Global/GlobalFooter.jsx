@@ -502,12 +502,6 @@ const Container = styled.footer`
 
 					img {
 						width: 15vw;
-						transition: 500ms;
-
-						:hover {
-							cursor: pointer;
-							width: 6vw;
-						}
 					}
 
 					p {

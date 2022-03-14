@@ -38,7 +38,7 @@ export default function Catalog() {
 
 				<form action="">
 					<input type="text" placeholder="Seu Email" />
-					<input type="text" name="" id="" placeholder="Sua dúvida" />
+					<textarea type="text" name="" id="" placeholder="Sua dúvida" />
 					<button type="submit">Enviar</button>
 				</form>
 

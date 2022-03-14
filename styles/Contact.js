@@ -4,7 +4,7 @@ import { FontCollor } from "./Components/_Colors"
 export const Main = styled.main`
 	& {
 		@media only screen and (max-width: 750px) {
-			margin-top: 25vh;
+			margin-top: 18vh;
 			text-align: center;
 			color: ${FontCollor};
 
@@ -32,6 +32,20 @@ export const Main = styled.main`
 				flex-direction: column;
 
 				input {
+					border: 0px;
+					box-shadow: rgb(209 217 230) 2px 2px 4px inset,
+						rgb(249 249 249) -2px -2px 4px inset;
+
+					padding: 1vw 2vw 1vw 2vw;
+					font-size: 5vw;
+					border-radius: 1vw;
+
+					:focus {
+						box-shadow: 0 0 0 0;
+						outline: 0;
+					}
+				}
+				textarea {
 					border: 0px;
 					box-shadow: rgb(209 217 230) 2px 2px 4px inset,
 						rgb(249 249 249) -2px -2px 4px inset;
@@ -100,6 +114,21 @@ export const Main = styled.main`
 				flex-direction: column;
 
 				input {
+					border: 0px;
+					box-shadow: rgb(209 217 230) 2px 2px 4px inset,
+						rgb(249 249 249) -2px -2px 4px inset;
+
+					padding: 1vw 2vw 1vw 2vw;
+					font-size: 1.5vw;
+					border-radius: 1vw;
+
+					:focus {
+						box-shadow: 0 0 0 0;
+						outline: 0;
+					}
+				}
+
+				textarea {
 					border: 0px;
 					box-shadow: rgb(209 217 230) 2px 2px 4px inset,
 						rgb(249 249 249) -2px -2px 4px inset;

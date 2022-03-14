@@ -12,20 +12,19 @@ export default function Catalog() {
 				<title>WizeBand</title>
 			</Head>
 
-			<Main className="register">
+			<Main>
 				<Header />
 
 				<section className="login">
-					<span>Criar</span>
+					<span>Entrar</span>
 					<form action="" onSubmit={() => {}}>
 						<div>
-							<input type="text" placeholder="Nome" />
 							<input type="text" placeholder="Login" />
 							<input type="text" placeholder="Senha" />
-							<input type="text" placeholder="Confirmar senha" />
 						</div>
-						<button>Criar conta</button>
-						<a href="/login/entrar">já tenho uma conta</a>
+						<button>Entrar</button>
+						<a href="/login/registro">esqueci a senha</a>
+						<a href="/login/registro">ainda não tenho uma conta</a>
 					</form>
 				</section>
 

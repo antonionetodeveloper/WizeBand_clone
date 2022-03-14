@@ -23,23 +23,31 @@ export const GlobalHeader = () => {
 						alt="logo"
 					/>
 					<div className="desktop_Contaniner">
-						<img
-							src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png"
-							alt="user"
-						/>
-						<img
-							src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"
-							alt="search"
-						/>
-						<img
-							src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-dollar-money-currency-those-icons-lineal-those-icons-3.png"
-							alt="moeda"
-						/>
-						<img
-							src="https://img.icons8.com/external-icongeek26-outline-icongeek26/64/000000/external-cart-ecommerce-icongeek26-outline-icongeek26.png"
-							alt="carrinho"
-							className="cart"
-						/>
+						<a href="/login/entrar">
+							<img
+								src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png"
+								alt="user"
+							/>
+						</a>
+						<a href="#">
+							<img
+								src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"
+								alt="search"
+							/>
+						</a>
+						<a href="#">
+							<img
+								src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-dollar-money-currency-those-icons-lineal-those-icons-3.png"
+								alt="moeda"
+							/>
+						</a>
+						<a href="/carrinho">
+							<img
+								src="https://img.icons8.com/external-icongeek26-outline-icongeek26/64/000000/external-cart-ecommerce-icongeek26-outline-icongeek26.png"
+								alt="carrinho"
+								className="cart"
+							/>
+						</a>
 					</div>
 				</section>
 				<nav className="mobileNav">
@@ -51,30 +59,30 @@ export const GlobalHeader = () => {
 					/>
 					<div>
 						<a href="/">Home</a>
-						<a href="/catalogo">Catálogo</a>
-						<a href="/couro">Faixas de Couro</a>
-						<a href="/nylon">Faixas de Náilon</a>
-						<a href="/silicone">Faixas de Silicone</a>
-						<a href="/metal">Faixas de Metal</a>
-						<a href="/acessorios">Acessórios</a>
+						<a href="/loja/catalogo">Catálogo</a>
+						<a href="/loja/couro">Faixas de Couro</a>
+						<a href="/loja/nylon">Faixas de Náilon</a>
+						<a href="/loja/silicone">Faixas de Silicone</a>
+						<a href="/loja/metal">Faixas de Metal</a>
+						<a href="/loja/acessorios">Acessórios</a>
 						<a href="/pedido">Acompanhar Pedido</a>
 						<a href="/contato">Contate-nos</a>
 					</div>
 					<div>
-						<a href="/login/login">Login</a>
-						<a href="/login/registro">Register</a>
-						<a href="#">Search</a>
+						<a href="/login/entrar">Entrar</a>
+						<a href="/login/registro">Registrar</a>
+						<a href="#">Proucurar</a>
 					</div>
 				</nav>
 			</div>
 			<nav>
 				<HeaderHook name={"Home"} to={"/"} />
-				<HeaderHook name={"Catálogo"} to={"/catalogo"} />
-				<HeaderHook name={"Faixas de Couro"} to={"/couro"} />
-				<HeaderHook name={"Faixas de Náilon"} to={"/nylon"} />
-				<HeaderHook name={"Faixas de Silicone"} to={"/silicone"} />
-				<HeaderHook name={"Faixas de Metal"} to={"/metal"} />
-				<HeaderHook name={"Acessórios"} to={"/acessorios"} />
+				<HeaderHook name={"Catálogo"} to={"/loja/catalogo"} />
+				<HeaderHook name={"Faixas de Couro"} to={"/loja/couro"} />
+				<HeaderHook name={"Faixas de Náilon"} to={"/loja/nylon"} />
+				<HeaderHook name={"Faixas de Silicone"} to={"/loja/silicone"} />
+				<HeaderHook name={"Faixas de Metal"} to={"/loja/metal"} />
+				<HeaderHook name={"Acessórios"} to={"/loja/acessorios"} />
 				<HeaderHook name={"Acompanhar pedido"} to={"/pedido"} />
 				<HeaderHook name={"Contate-nos"} to={"/contato"} />
 			</nav>
@@ -205,6 +213,8 @@ const Container = styled.header`
 						margin: auto;
 						justify-content: center;
 						align-items: center;
+						position: relative;
+						left: 8vw;
 
 						:hover {
 							cursor: pointer;
@@ -222,9 +232,8 @@ const Container = styled.header`
 						.cart {
 							display: flex;
 							width: 10vw;
-							position: absolute;
-							right: 3vw;
 						}
+
 						img {
 							display: none;
 
