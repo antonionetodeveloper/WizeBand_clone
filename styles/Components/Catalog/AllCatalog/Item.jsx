@@ -7,7 +7,12 @@ export const Item = (props) => {
 			<img src={props.img} alt="item" />
 			<div>
 				<h6>{props.name}</h6>
-				<p>{props.price}</p>
+				<p>
+					{props.price.toLocaleString("pt-BR", {
+						style: "currency",
+						currency: "BRL",
+					})}
+				</p>
 			</div>
 		</Container>
 	)

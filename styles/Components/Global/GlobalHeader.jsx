@@ -35,12 +35,6 @@ export const GlobalHeader = () => {
 								alt="search"
 							/>
 						</a>
-						<a href="#">
-							<img
-								src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-dollar-money-currency-those-icons-lineal-those-icons-3.png"
-								alt="moeda"
-							/>
-						</a>
 						<a href="/carrinho">
 							<img
 								src="https://img.icons8.com/external-icongeek26-outline-icongeek26/64/000000/external-cart-ecommerce-icongeek26-outline-icongeek26.png"
