@@ -1,4 +1,7 @@
+import { useRef, useState } from "react"
 import Head from "next/head"
+
+import emailjs from "emailjs-com"
 
 import { Main } from "../styles/Contact.js"
 
@@ -6,6 +9,32 @@ import { GlobalHeader as Header } from "../styles/Components/Global/GlobalHeader
 import { GlobalFooter as Footer } from "../styles/Components/Global/GlobalFooter"
 
 export default function Catalog() {
+	const form = useRef()
+	const [email, setEmail] = useState("")
+	const [content, setContent] = useState("")
+
+	async function sendEmail() {
+		if (email != "" && content != "") {
+			await emailjs
+				.sendForm(
+					"gmailMessage",
+					"template_u6lz4uc",
+					form.current,
+					"user_4aLlx0n2ziH8uqNDSxDHx",
+				)
+				.then(
+					() => {
+						alert("Email enviado com sucesso.")
+					},
+					() => {
+						alert("Não foi possível enviar o email")
+						location.reload()
+					},
+				)
+		} else {
+			alert("Por favor, preencha os dados adequadamente.")
+		}
+	}
 	return (
 		<>
 			<Head>
@@ -36,10 +65,28 @@ export default function Catalog() {
 					</div>
 				</section>
 
-				<form action="">
-					<input type="text" placeholder="Seu Email" />
-					<textarea type="text" name="" id="" placeholder="Sua dúvida" />
-					<button type="submit">Enviar</button>
+				<form action="" ref={form}>
+					<input
+						type="name"
+						placeholder="Seu email"
+						name="name"
+						onChange={(e) => setEmail(e.target.value)}
+						value={email}
+					/>
+					<textarea
+						name="message"
+						placeholder="Escreva algo.."
+						value={content}
+						onChange={(e2) => setContent(e2.target.value)}
+					/>
+					<button
+						type="button"
+						onClick={() => {
+							sendEmail()
+						}}
+					>
+						Enviar
+					</button>
 				</form>
 
 				<Footer />

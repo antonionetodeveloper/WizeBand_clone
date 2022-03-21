@@ -1,6 +1,29 @@
+import { useRef, useState } from "react"
 import styled from "styled-components"
+import emailjs from "emailjs-com"
 
 export const GlobalFooter = () => {
+	const form = useRef()
+	const [email, setEmail] = useState("")
+
+	async function sendEmail() {
+		await emailjs
+			.sendForm(
+				"gmailMessage",
+				"template_u6lz4uc",
+				form.current,
+				"user_4aLlx0n2ziH8uqNDSxDHx",
+			)
+			.then(
+				() => {
+					alert("Email enviado com sucesso.")
+				},
+				() => {
+					alert("Não foi possível enviar o email")
+				},
+			)
+	}
+
 	return (
 		<Container>
 			<div className="qualities">
@@ -56,10 +79,25 @@ export const GlobalFooter = () => {
 				</div>
 				<div className="subscribe">
 					<p>Inscreva-se para ofertas especiais e sorteios grátis</p>
-					<div>
-						<input type="text" placeholder="Seu email" />
-						<button>INSCREVER</button>
-					</div>
+					<form ref={form}>
+						<div>
+							<input
+								type="text"
+								placeholder="Seu email"
+								name="name"
+								onChange={(e) => setEmail(e.target.value)}
+								value={email}
+							/>
+							<button
+								type="button"
+								onClick={() => {
+									sendEmail()
+								}}
+							>
+								INSCREVER
+							</button>
+						</div>
+					</form>
 				</div>
 				<div className="contact">
 					<h3>Contate-nos:</h3>
@@ -404,47 +442,49 @@ const Container = styled.footer`
 						text-transform: uppercase;
 					}
 
-					div {
-						display: flex;
-						justify-content: center;
+					form {
+						div {
+							display: flex;
+							justify-content: center;
 
-						input {
-							border: 0px;
-							border-top-left-radius: 5vw;
-							border-top-right-radius: 0vw;
-							border-bottom-right-radius: 0vw;
-							border-bottom-left-radius: 5vw;
+							input {
+								border: 0px;
+								border-top-left-radius: 5vw;
+								border-top-right-radius: 0vw;
+								border-bottom-right-radius: 0vw;
+								border-bottom-left-radius: 5vw;
 
-							text-align: center;
-							font-size: 5vw;
+								text-align: center;
+								font-size: 5vw;
 
-							width: 50vw;
+								width: 50vw;
 
-							:focus {
-								box-shadow: 0 0 0 0;
-								outline: 0;
+								:focus {
+									box-shadow: 0 0 0 0;
+									outline: 0;
+								}
 							}
-						}
 
-						button {
-							border: 0px;
-							border-top-left-radius: 0vw;
-							border-top-right-radius: 5vw;
-							border-bottom-right-radius: 5vw;
-							border-bottom-left-radius: 0vw;
+							button {
+								border: 0px;
+								border-top-left-radius: 0vw;
+								border-top-right-radius: 5vw;
+								border-bottom-right-radius: 5vw;
+								border-bottom-left-radius: 0vw;
 
-							background-color: #493436;
-							color: white;
-							text-align: center;
-							font-size: 5vw;
+								background-color: #493436;
+								color: white;
+								text-align: center;
+								font-size: 5vw;
 
-							padding: 3vw 3vw 3vw 2vw;
+								padding: 3vw 3vw 3vw 2vw;
 
-							transition: 0.2s;
+								transition: 0.2s;
 
-							:hover {
-								background-color: #846c65;
-								cursor: pointer;
+								:hover {
+									background-color: #846c65;
+									cursor: pointer;
+								}
 							}
 						}
 					}
