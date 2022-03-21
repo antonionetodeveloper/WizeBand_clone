@@ -13,7 +13,9 @@ export default function Home() {
 
 			<Header />
 
-			<Main></Main>
+			<Main>
+				<p>oi</p>
+			</Main>
 
 			<Footer />
 		</>
