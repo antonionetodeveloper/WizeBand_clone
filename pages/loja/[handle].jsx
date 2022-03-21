@@ -68,21 +68,7 @@ const singleQuery = gql`
 
 export default function Item({ product: singleProduct }) {
 	const [isAvaibleForSale, setIsAvaibleForSale] = useState(false)
-	useEffect(() => {
-		setIsAvaibleForSale(singleProduct.availableForSale)
-	}, [])
-
-	const { CartList } = useContext(CartContext)
-	function addItemToCart() {
-		CartList.push({
-			// parei aqui, a CONTEXT API, perde os dados quando a pagina é atualizada.
-			title: singleProduct.title,
-			price: singleProduct.priceRange.minVariantPrice.amount,
-			image: singleProduct.images.edges[0].node.transformedSrc,
-		})
-		console.log(CartList)
-	}
-
+	setIsAvaibleForSale(singleProduct.availableForSale)
 	return (
 		<>
 			<Header />
@@ -103,9 +89,7 @@ export default function Item({ product: singleProduct }) {
 						})}
 					</span>
 					{isAvaibleForSale ? (
-						<button onClick={() => addItemToCart()}>
-							Adicionar ao carrinho
-						</button>
+						<button onClick={() => {}}>Adicionar ao carrinho</button>
 					) : (
 						<p className="outOfStock">Item fora de estoque</p>
 					)}
