@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react"
+
 import { storeFront } from "../../shop/utils"
 
 import { Main } from "../../styles/items"
