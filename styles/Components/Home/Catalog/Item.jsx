@@ -4,7 +4,7 @@ import styled from "styled-components"
 export const Item = (props) => {
 	return (
 		<Container>
-			<img src="/home/catalog/clock1.png" alt="item" />
+			<img src={props.img} alt="item" />
 			<div>
 				<h6>{props.name}</h6>
 				<p>
@@ -21,7 +21,13 @@ export const Item = (props) => {
 const Container = styled.div`
 	& {
 		@media only screen and (min-width: 751px) {
+			width: 20vw;
+			height: 20vw;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			overflow: hidden;
+
 			img {
 				max-width: 15vw;
 				-moz-transition: all 0.3s;
@@ -56,11 +62,15 @@ const Container = styled.div`
 		}
 
 		@media only screen and (max-width: 750px) {
+			width: 40vw;
+			height: 60vw;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			overflow: hidden;
-			margin-bottom: 15vw;
 
 			img {
-				max-width: 40vw;
+				width: 40vw;
 				-moz-transition: all 0.3s;
 				-webkit-transition: all 0.3s;
 				transition: all 0.3s;

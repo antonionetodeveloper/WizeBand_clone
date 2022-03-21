@@ -10,8 +10,10 @@ import { Categories } from "../styles/Components/Home/Categories/Categories"
 import { Catalog } from "../styles/Components/Home/Catalog/Catalog"
 import { Reviews } from "../styles/Components/Home/Reviews/Reviews"
 import { Folder as Instagram } from "../styles/Components/Home/Instagram/Folder"
+import { storeFront } from "../shop/utils"
 
-export default function Home() {
+// eslint-disable-next-line react/prop-types
+export default function Home({ products }) {
 	return (
 		<>
 			<Head>
@@ -30,7 +32,7 @@ export default function Home() {
 				<Categories />
 
 				<h2>Todos os itens</h2>
-				<Catalog />
+				<Catalog productList={products} />
 
 				<h2 className="reviews">Avaliações de clientes</h2>
 				<Reviews />
@@ -43,3 +45,41 @@ export default function Home() {
 		</>
 	)
 }
+
+export async function getStaticProps() {
+	const { data } = await storeFront(QUERY)
+	return {
+		props: {
+			products: data.products,
+		},
+	}
+}
+const gql = String.raw
+const QUERY = gql`
+	query Products {
+		products(first: 10) {
+			edges {
+				node {
+					id
+					title
+					handle
+					availableForSale
+					tags
+					priceRange {
+						minVariantPrice {
+							amount
+						}
+					}
+					images(first: 1) {
+						edges {
+							node {
+								transformedSrc
+								altText
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+`

@@ -54,8 +54,10 @@ const QUERY = gql`
 		products(first: 10) {
 			edges {
 				node {
+					id
 					title
 					handle
+					availableForSale
 					tags
 					priceRange {
 						minVariantPrice {

@@ -21,9 +21,14 @@ export const Item = (props) => {
 const Container = styled.div`
 	& {
 		@media only screen and (max-width: 750px) {
+			width: 40vw;
+			height: 40vw;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			overflow: hidden;
 			img {
-				max-width: 40vw;
+				width: 40vw;
 				-moz-transition: all 0.3s;
 				-webkit-transition: all 0.3s;
 				transition: all 0.3s;
@@ -42,10 +47,11 @@ const Container = styled.div`
 				p {
 					text-align: center;
 					margin: 0px;
+					max-width: 40vw;
 				}
 
 				h6 {
-					font-size: 7vw;
+					font-size: 14pt;
 					font-weight: 600;
 				}
 			}
@@ -56,7 +62,13 @@ const Container = styled.div`
 		}
 
 		@media only screen and (min-width: 751px) {
+			width: 20vw;
+			height: 20vw;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			overflow: hidden;
+
 			img {
 				max-width: 15vw;
 				-moz-transition: all 0.3s;

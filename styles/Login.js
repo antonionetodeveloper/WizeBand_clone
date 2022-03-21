@@ -179,3 +179,55 @@ export const Main = styled.main`
 		}
 	}
 `
+
+// eslint-disable-next-line react/prop-types
+export const Loading = ({ isLoading }) => {
+	return (
+		<Container isLoading={isLoading}>
+			<div>
+				<img src="/loading.svg" alt="carregando" />
+			</div>
+		</Container>
+	)
+}
+
+const Container = styled.div`
+	display: ${(props) => {
+		if (props.isLoading) {
+			return "flex"
+		}
+		if (!props.isLoading) {
+			return "none"
+		}
+	}};
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 3;
+
+	align-items: center;
+	justify-content: center;
+
+	div {
+		background-color: #e4d8d0;
+
+		width: 20vw;
+		height: 30vh;
+		padding: 5vw;
+
+		display: flex;
+		margin: auto;
+		margin-top: 19vh;
+		justify-content: center;
+
+		border-radius: 1vw;
+		box-shadow: #ecd0b4 0px 0px 30px;
+
+		z-index: 3;
+
+		img {
+			width: 20vw;
+		}
+	}
+`

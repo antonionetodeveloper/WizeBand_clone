@@ -1,0 +1,119 @@
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react"
+import { useContext } from "react"
+
+import { storeFront } from "../../shop/utils"
+
+import { Main } from "../../styles/items"
+import { GlobalHeader as Header } from "../../styles/Components/Global/GlobalHeader"
+import { GlobalFooter as Footer } from "../../styles/Components/Global/GlobalFooter"
+
+import { CartContext } from "../../contexts/Cart"
+
+export async function getStaticPaths() {
+	const { data } = await storeFront(gql`
+		{
+			products(first: 6) {
+				edges {
+					node {
+						handle
+					}
+				}
+			}
+		}
+	`)
+
+	return {
+		paths: data.products.edges.map((product) => ({
+			params: { handle: product.node.handle },
+		})),
+		fallback: false,
+	}
+}
+
+export async function getStaticProps({ params }) {
+	const { data } = await storeFront(singleQuery, { handle: params.handle })
+
+	return {
+		props: {
+			product: data.productByHandle,
+		},
+	}
+}
+
+const gql = String.raw
+const singleQuery = gql`
+	query SingleProduct($handle: String!) {
+		productByHandle(handle: $handle) {
+			title
+			description
+			tags
+			availableForSale
+			priceRange {
+				minVariantPrice {
+					amount
+				}
+			}
+			images(first: 1) {
+				edges {
+					node {
+						transformedSrc
+						altText
+					}
+				}
+			}
+		}
+	}
+`
+
+export default function Item({ product: singleProduct }) {
+	const [isAvaibleForSale, setIsAvaibleForSale] = useState(false)
+	useEffect(() => {
+		setIsAvaibleForSale(singleProduct.availableForSale)
+	}, [])
+
+	const { CartList } = useContext(CartContext)
+	function addItemToCart() {
+		CartList.push({
+			// parei aqui, a CONTEXT API, perde os dados quando a pagina é atualizada.
+			title: singleProduct.title,
+			price: singleProduct.priceRange.minVariantPrice.amount,
+			image: singleProduct.images.edges[0].node.transformedSrc,
+		})
+		console.log(CartList)
+	}
+
+	return (
+		<>
+			<Header />
+
+			<Main>
+				<img
+					src={singleProduct.images.edges[0].node.transformedSrc}
+					alt="produto"
+				/>
+				<div>
+					<h3>{singleProduct.title}</h3>
+					<span>
+						{parseInt(
+							singleProduct.priceRange.minVariantPrice.amount,
+						).toLocaleString("pt-BR", {
+							style: "currency",
+							currency: "BRL",
+						})}
+					</span>
+					{isAvaibleForSale ? (
+						<button onClick={() => addItemToCart()}>
+							Adicionar ao carrinho
+						</button>
+					) : (
+						<p className="outOfStock">Item fora de estoque</p>
+					)}
+					<p>{singleProduct.description}</p>
+				</div>
+			</Main>
+
+			<Footer />
+		</>
+	)
+}
