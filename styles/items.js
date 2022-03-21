@@ -43,7 +43,7 @@ export const Main = styled.main`
 				}
 
 				span {
-					margin-top: 5vw;
+					margin-top: 2vw;
 					font-size: 2vw;
 				}
 
