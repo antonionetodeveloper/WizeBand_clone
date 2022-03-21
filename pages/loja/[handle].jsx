@@ -1,14 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react"
-import { useContext } from "react"
-
 import { storeFront } from "../../shop/utils"
 
 import { Main } from "../../styles/items"
 import { GlobalHeader as Header } from "../../styles/Components/Global/GlobalHeader"
 import { GlobalFooter as Footer } from "../../styles/Components/Global/GlobalFooter"
-
-import { CartContext } from "../../contexts/Cart"
 
 export async function getStaticPaths() {
 	const { data } = await storeFront(gql`
