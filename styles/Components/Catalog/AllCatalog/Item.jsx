@@ -22,7 +22,7 @@ const Container = styled.div`
 	& {
 		@media only screen and (max-width: 750px) {
 			width: 40vw;
-			height: 40vw;
+			height: 50vw;
 			display: flex;
 			flex-direction: column;
 			align-items: center;

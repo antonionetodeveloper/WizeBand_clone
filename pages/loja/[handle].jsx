@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react"
-
 import { storeFront } from "../../shop/utils"
 
 import { Main } from "../../styles/items"
@@ -64,8 +62,6 @@ const singleQuery = gql`
 `
 
 export default function Item({ product: singleProduct }) {
-	const [isAvaibleForSale, setIsAvaibleForSale] = useState(false)
-	setIsAvaibleForSale(singleProduct.availableForSale)
 	return (
 		<>
 			<Header />
@@ -85,7 +81,7 @@ export default function Item({ product: singleProduct }) {
 							currency: "BRL",
 						})}
 					</span>
-					{isAvaibleForSale ? (
+					{singleProduct.availableForSale ? (
 						<button onClick={() => {}}>Adicionar ao carrinho</button>
 					) : (
 						<p className="outOfStock">Item fora de estoque</p>

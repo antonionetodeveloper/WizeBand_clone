@@ -15,6 +15,17 @@ const Container = styled.div`
 		margin-top: 10vh;
 		margin-bottom: 10vh;
 
+		img {
+			@media only screen and (min-width: 751px) {
+				width: 20vw;
+				height: 10vw;
+			}
+			@media only screen and (max-width: 750px) {
+				width: 40vw;
+				height: 40vw;
+			}
+		}
+
 		a {
 			color: #604648;
 			text-decoration: none;
