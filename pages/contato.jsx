@@ -65,25 +65,28 @@ export default function Catalog() {
 					</div>
 				</section>
 
-				<form action="" ref={form}>
+				<form action="" ref={form} className="form">
 					<input
 						type="name"
 						placeholder="Seu email"
 						name="name"
 						onChange={(e) => setEmail(e.target.value)}
 						value={email}
+						className="input"
 					/>
 					<textarea
 						name="message"
 						placeholder="Escreva algo.."
 						value={content}
 						onChange={(e2) => setContent(e2.target.value)}
+						className="textarea"
 					/>
 					<button
 						type="button"
 						onClick={() => {
 							sendEmail()
 						}}
+						className="button"
 					>
 						Enviar
 					</button>

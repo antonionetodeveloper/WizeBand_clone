@@ -24,14 +24,14 @@ export default function Home({ products }) {
 
 			<Main>
 				<Carousel
-					src1={"/home/carousel/ex.png"}
-					src2={"/home/carousel/ex.png"}
-					src3={"/home/carousel/ex.png"}
+					src1={"/home/carousel/banner2.jpg"}
+					src2={"/home/carousel/banner1.jpg"}
+					src3={"/home/carousel/banner3.jpg"}
 				/>
 
 				<Categories />
 
-				<h2>Todos os itens</h2>
+				<h2>Alguns items</h2>
 				<Catalog productList={products} />
 
 				<h2 className="reviews">Avaliações de clientes</h2>

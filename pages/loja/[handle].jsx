@@ -62,6 +62,12 @@ const singleQuery = gql`
 `
 
 export default function Item({ product: singleProduct }) {
+	let products = new Array()
+	function addItemToCart(key, value) {
+		products.push(value)
+		localStorage.setItem(key, JSON.stringify(products))
+	}
+
 	return (
 		<>
 			<Header />
@@ -82,7 +88,13 @@ export default function Item({ product: singleProduct }) {
 						})}
 					</span>
 					{singleProduct.availableForSale ? (
-						<button onClick={() => {}}>Adicionar ao carrinho</button>
+						<button
+							onClick={() => {
+								addItemToCart("CART", singleProduct)
+							}}
+						>
+							Adicionar ao carrinho
+						</button>
 					) : (
 						<p className="outOfStock">Item fora de estoque</p>
 					)}

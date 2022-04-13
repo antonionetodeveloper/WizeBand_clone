@@ -7,7 +7,6 @@ export const GlobalHeader = () => {
 
 	return (
 		<Container isVisible={isMobileMenuVisible}>
-			<h1>WizeBand</h1>
 			<div>
 				<section>
 					<img
@@ -18,21 +17,15 @@ export const GlobalHeader = () => {
 							setisMobileMenuVisible(true)
 						}}
 					/>
-					<img
-						src="//cdn.shopify.com/s/files/1/0091/1969/4914/files/R_WizeBand_Metal_Gold_TRANSPARENT_7674fe0e-67e2-4645-830b-7992beba77bc_256x.png?v=1638369771"
-						alt="logo"
-					/>
+					<div className="logo">
+						<img src="/logo.png" alt="logo" />
+						<h1>Site 2 It</h1>
+					</div>
 					<div className="desktop_Contaniner">
 						<a href="/login/entrar">
 							<img
 								src="https://img.icons8.com/ios-glyphs/30/000000/user--v1.png"
 								alt="user"
-							/>
-						</a>
-						<a href="#">
-							<img
-								src="https://img.icons8.com/ios-glyphs/30/000000/search--v1.png"
-								alt="search"
 							/>
 						</a>
 						<a href="/carrinho">
@@ -57,7 +50,7 @@ export const GlobalHeader = () => {
 						<a href="/loja/couro">Faixas de Couro</a>
 						<a href="/loja/nylon">Faixas de Náilon</a>
 						<a href="/loja/silicone">Faixas de Silicone</a>
-						<a href="/loja/metal">Faixas de Metal</a>
+						<a href="/loja/metal">Faixas de Time</a>
 						<a href="/loja/acessorios">Acessórios</a>
 						<a href="/pedido">Acompanhar Pedido</a>
 						<a href="/contato">Contate-nos</a>
@@ -65,7 +58,6 @@ export const GlobalHeader = () => {
 					<div>
 						<a href="/login/entrar">Entrar</a>
 						<a href="/login/registro">Registrar</a>
-						<a href="#">Proucurar</a>
 					</div>
 				</nav>
 			</div>
@@ -75,7 +67,7 @@ export const GlobalHeader = () => {
 				<HeaderHook name={"Faixas de Couro"} to={"/loja/couro"} />
 				<HeaderHook name={"Faixas de Náilon"} to={"/loja/nylon"} />
 				<HeaderHook name={"Faixas de Silicone"} to={"/loja/silicone"} />
-				<HeaderHook name={"Faixas de Metal"} to={"/loja/metal"} />
+				<HeaderHook name={"Faixas de Time"} to={"/loja/times"} />
 				<HeaderHook name={"Acessórios"} to={"/loja/acessorios"} />
 				<HeaderHook name={"Acompanhar pedido"} to={"/pedido"} />
 				<HeaderHook name={"Contate-nos"} to={"/contato"} />
@@ -98,10 +90,6 @@ const Container = styled.header`
 			flex-direction: column;
 			justify-content: space-between;
 
-			h1 {
-				display: none;
-			}
-
 			div {
 				display: flex;
 				flex-direction: column;
@@ -117,10 +105,23 @@ const Container = styled.header`
 						display: none;
 					}
 
-					img {
-						margin: auto;
-						margin-left: 40vw;
+					.logo {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						width: 42vw;
 
+						h1{
+							font-size: 4vw;
+							margin: 0px;
+							color: #493436;
+						}
+
+						img {
+							width: 5vw;
+							margin: 0px;
+
+						}
 						:hover {
 							cursor: pointer;
 						}
@@ -132,7 +133,6 @@ const Container = styled.header`
 						align-items: center;
 						gap: 1vw;
 						margin-top: 0px;
-						margin-right: 3vw;
 
 						img {
 							width: 3vw;
@@ -142,6 +142,10 @@ const Container = styled.header`
 								cursor: pointer;
 							}
 						}
+					}
+					.desktop_Contaniner{
+						position: absolute;
+						left: 85vw;
 					}
 				}
 
@@ -179,8 +183,6 @@ const Container = styled.header`
 			justify-content: center;
 			align-items: center;
 
-			h1 {
-				display: none;
 			}
 
 			div {

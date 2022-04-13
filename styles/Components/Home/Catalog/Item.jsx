@@ -22,14 +22,16 @@ const Container = styled.div`
 	& {
 		@media only screen and (min-width: 751px) {
 			width: 20vw;
-			height: 20vw;
+			height: 30vw;
+
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			overflow: hidden;
 
 			img {
-				max-width: 15vw;
+				width: 15vw;
+				height: 15vw;
 				-moz-transition: all 0.3s;
 				-webkit-transition: all 0.3s;
 				transition: all 0.3s;

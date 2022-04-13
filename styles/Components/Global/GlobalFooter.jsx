@@ -71,12 +71,6 @@ export const GlobalFooter = () => {
 				</div>
 			</div>
 			<div className="Container_top">
-				<div className="logo">
-					<img
-						src="//cdn.shopify.com/s/files/1/0091/1969/4914/files/R_WizeBand_Taupe_TRANSPARENT_400x.png?v=1638370040"
-						alt="logo"
-					/>
-				</div>
 				<div className="subscribe">
 					<p>Inscreva-se para ofertas especiais e sorteios grátis</p>
 					<form ref={form}>
@@ -216,7 +210,8 @@ const Container = styled.footer`
 			div.Container_top,
 			div.Container_bottom {
 				display: flex;
-				gap: 2vw;
+				gap: 10vw;
+				justify-content: center;
 			}
 
 			div.Container_top {
@@ -231,12 +226,6 @@ const Container = styled.footer`
 				div.logo {
 					margin-top: 2vw;
 					margin-left: 1vw;
-					img {
-						width: 20vw;
-						:hover {
-							cursor: pointer;
-						}
-					}
 				}
 				div.subscribe {
 					p {
@@ -262,6 +251,7 @@ const Container = styled.footer`
 							font-size: 1.5vw;
 
 							width: 15vw;
+							padding: 0px;
 
 							:focus {
 								box-shadow: 0 0 0 0;

@@ -58,6 +58,7 @@ const Container = styled.div`
 
 				img {
 					width: 20vw;
+					height: 20vw;
 					border-radius: 1vw;
 				}
 			}

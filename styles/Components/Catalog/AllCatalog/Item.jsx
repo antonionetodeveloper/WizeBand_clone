@@ -62,15 +62,16 @@ const Container = styled.div`
 		}
 
 		@media only screen and (min-width: 751px) {
-			width: 20vw;
-			height: 20vw;
+			min-width: 20vw;
+			min-height: 20vw;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			overflow: hidden;
 
 			img {
-				max-width: 15vw;
+				min-width: 15vw;
+				min-height: 20vw;
 				-moz-transition: all 0.3s;
 				-webkit-transition: all 0.3s;
 				transition: all 0.3s;
@@ -93,6 +94,7 @@ const Container = styled.div`
 
 				h6 {
 					font-size: 2vw;
+					width: 25vw;
 					font-weight: 600;
 				}
 			}

@@ -31,12 +31,11 @@ export const Main = styled.main`
 				gap: 5vw;
 				flex-direction: column;
 
-				input {
+				.input {
 					border: 0px;
 					box-shadow: rgb(209 217 230) 2px 2px 4px inset,
 						rgb(249 249 249) -2px -2px 4px inset;
 
-					padding: 1vw 2vw 1vw 2vw;
 					font-size: 5vw;
 					border-radius: 1vw;
 
@@ -105,7 +104,7 @@ export const Main = styled.main`
 				}
 			}
 
-			form {
+			.form {
 				width: 30vw;
 
 				display: flex;
@@ -113,7 +112,7 @@ export const Main = styled.main`
 				gap: 2vw;
 				flex-direction: column;
 
-				input {
+				.input {
 					border: 0px;
 					box-shadow: rgb(209 217 230) 2px 2px 4px inset,
 						rgb(249 249 249) -2px -2px 4px inset;
@@ -128,7 +127,7 @@ export const Main = styled.main`
 					}
 				}
 
-				textarea {
+				.textarea {
 					border: 0px;
 					box-shadow: rgb(209 217 230) 2px 2px 4px inset,
 						rgb(249 249 249) -2px -2px 4px inset;
@@ -143,7 +142,7 @@ export const Main = styled.main`
 					}
 				}
 
-				button {
+				.button {
 					border: 0px;
 					background-color: #493436;
 					color: white;

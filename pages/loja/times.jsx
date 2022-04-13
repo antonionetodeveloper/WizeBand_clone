@@ -11,7 +11,7 @@ import { storeFront } from "../../shop/utils"
 import AllCatalog from "../../styles/Components/Catalog/AllCatalog/AllCatalog"
 
 export default function Catalog({ products }) {
-	const filter = "metal"
+	const filter = "time"
 	const [productListLength, setProductListLength] = useState([])
 
 	useEffect(() => {
@@ -32,7 +32,7 @@ export default function Catalog({ products }) {
 				<Header />
 
 				<section className="first">
-					<span>FAIXAS DE METAL ({productListLength.length})</span>
+					<span>FAIXAS DE TIMES ({productListLength.length})</span>
 					<AllCatalog productList={products} filter={filter} />
 				</section>
 

@@ -6,10 +6,22 @@ export const Categories = () => {
 		<Container>
 			<h2>Escolha por categoria</h2>
 			<div>
-				<Category srcImage={"/home/categories/metal_band.jpg"} to={"/"} />
-				<Category srcImage={"/home/categories/metal_band.jpg"} to={"/"} />
-				<Category srcImage={"/home/categories/metal_band.jpg"} to={"/"} />
-				<Category srcImage={"/home/categories/metal_band.jpg"} to={"/"} />
+				<Category
+					srcImage={"/home/categories/couro.png"}
+					to={"/loja/couro"}
+				/>
+				<Category
+					srcImage={"/home/categories/nylon.jpg"}
+					to={"/loja/nylon"}
+				/>
+				<Category
+					srcImage={"/home/categories/algodao.jpg"}
+					to={"/loja/catalogo"}
+				/>
+				<Category
+					srcImage={"/home/categories/silicone.jpg"}
+					to={"/loja/silicone"}
+				/>
 			</div>
 		</Container>
 	)

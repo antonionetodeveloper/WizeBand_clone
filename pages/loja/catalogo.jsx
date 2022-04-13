@@ -30,7 +30,7 @@ export default function Catalog({ products }) {
 				<Header />
 
 				<section className="first">
-					<span>TODAS AS BANDAS ({productListLength.length})</span>
+					<span>TODOS OS ITENS ({productListLength.length})</span>
 					<AllCatalog productList={products} filter={filter} />
 				</section>
 

@@ -18,7 +18,7 @@ const Container = styled.div`
 		img {
 			@media only screen and (min-width: 751px) {
 				width: 20vw;
-				height: 10vw;
+				height: 20vh;
 			}
 			@media only screen and (max-width: 750px) {
 				width: 40vw;
