@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 
 // eslint-disable-next-line react/prop-types
-export const Item = ({ title, price, img }) => {
+export default function Item({ title, price, img }) {
 	const [cartList, setCartList] = useState([])
 	useEffect(() => {
 		const cartListJson = JSON.parse(localStorage.getItem("CART"))

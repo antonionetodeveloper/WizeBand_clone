@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import Head from "next/head"
 
 import { Main } from "../../styles/Cart"
-import { Item } from "./Components/Item"
+import Item from "./Components/Item"
 
 import { GlobalHeader as Header } from "../../styles/Components/Global/GlobalHeader"
 import { GlobalFooter as Footer } from "../../styles/Components/Global/GlobalFooter"
